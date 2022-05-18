@@ -17,18 +17,17 @@ class App extends Component {
   }
 
   goToPage = function (pageName) {
-    console.log(this)
     this.setState({
       actualPage: pageName
     })
   }
 
-  render () {
+  render() {
     return (
       <>
-        {this.state.actualPage==this.state.gamePage && <GamesPage pageName={this.state.gamePage} goToPage={this.goToPage} />}
-        {this.state.actualPage==this.state.highScorePage && <HighScorePage pageName={this.state.highScorePage} goToPage={this.goToPage}/>}
-        {this.state.actualPage==this.state.playersPage && <PlayersPage pageName={this.state.playersPage} goToPage={this.goToPage}/>}
+        {this.state.actualPage == this.state.gamePage && <GamesPage pageName={this.state.gamePage} goToPage={this.goToPage} />}
+        {this.state.actualPage == this.state.highScorePage && <HighScorePage pageName={this.state.highScorePage} goToPage={this.goToPage} />}
+        {this.state.actualPage == this.state.playersPage && <PlayersPage pageName={this.state.playersPage} goToPage={this.goToPage} />}
       </>
     );
   }
