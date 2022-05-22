@@ -3,11 +3,22 @@ import { Component } from "react";
 export default class SearchForm extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            searchTerm: ""
+        }
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    submitFunction = (event) => {}
+    submitFunction = (event) => {
+        event.preventDefault();
+        this.props.searchFunction(this.state.searchTerm)
+    }
 
-    handleChange (event) {}
+    handleChange (event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
 
     render() {
         return (

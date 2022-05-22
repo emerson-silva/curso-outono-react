@@ -1,5 +1,22 @@
-.header {
-  background-color: gainsboro;
-  height: 100px;
-  text-align: center;
+body {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+  font-family: 'Roboto', sans-serif; }
+  body #games-page .content.container, body #players-page .content.container, body #high-score-page .content.container {
+    margin-bottom: 134px; }
+
+div.card.game-box {
+  margin-bottom: 24px; }
+
+div.card.game-box:not(.expanded) .card-body.high-scores-background {
+  display: none; }
+div.card.game-box:not(.expanded) .card-footer .show-less {
+  display: none; }
+
+div.card.game-box.expanded .card-header .player-name, div.card.game-box.expanded .card-header .game-best-score {
+  display: none; }
+div.card.game-box.expanded .card-footer .show-more {
+  display: none; }
+
+nav.navbar .nav-item span.nav-link.navbar-text {
+  cursor: pointer;
 }

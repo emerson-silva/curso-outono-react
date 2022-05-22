@@ -1,7 +1,8 @@
 import { Component } from "react";
+import { PlayerContext } from "../../context/PlayerContext";
 
-// TODO: Usar context para pegar o nome do jogador default
 export default class HighScoreForm extends Component {
+    static contextType = PlayerContext;
 
     constructor(props) {
         super(props);
@@ -23,7 +24,8 @@ export default class HighScoreForm extends Component {
                 let defaultGameId = (data[0])?data[0].id:"";
                 this.setState({
                     games: data,
-                    game: defaultGameId
+                    game: defaultGameId,
+                    player: this.context.playerName
                 })
             })
         })

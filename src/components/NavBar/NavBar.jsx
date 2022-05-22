@@ -1,22 +1,25 @@
 import { Component } from "react";
 
 export default class NavBar extends Component {
-
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.goToPlayerPage = this.goToPlayerPage.bind(this);
+        this.state = {
+            playersPage: "players",
+            gamesPage: "games",
+            scoresPage: "scores"
+        }
     }
 
-    goToPlayerPage = function () {
-        this.props.goToPage("players");
+    goToPlayersPage = () => {
+        this.props.goToPage(this.state.playersPage)
     }
 
     goToGamesPage = () => {
-        this.props.goToPage("games");
+        this.props.goToPage(this.state.gamesPage)
     }
 
-    goToHighScorePage = () => {
-        this.props.goToPage("highScore");
+    goToScoresPage = () => {
+        this.props.goToPage(this.state.scoresPage)
     }
 
     render() {
@@ -24,7 +27,7 @@ export default class NavBar extends Component {
             <nav className="navbar fixed-bottom nav-justified navbar-light bg-light">
                 <div className="container-fluid">
                     <div className="nav-item">
-                        <span className="nav-link navbar-text" onClick={this.goToPlayerPage}>
+                        <span className="nav-link navbar-text" onClick={this.goToPlayersPage}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 className="bi bi-person" viewBox="0 0 16 16">
                                 <path
@@ -36,7 +39,7 @@ export default class NavBar extends Component {
                         </span>
                     </div>
                     <div className="nav-item">
-                        <span className="nav-link navbar-text active" onClick={this.goToHighScorePage}>
+                        <span className="nav-link navbar-text active" onClick={this.goToScoresPage}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                                 className="bi bi-trophy" viewBox="0 0 16 16">
                                 <path
@@ -63,6 +66,6 @@ export default class NavBar extends Component {
                     </div>
                 </div>
             </nav>
-        )
+        );
     }
 }
